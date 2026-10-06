@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'IA au quotidien</title>
+<meta name="description" content="Six fiches gratuites pour utiliser l'IA dans une petite entreprise : courriels délicats, relances, résumés, réunions, annonces, et les règles de prudence. Consignes prêtes à copier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --fond: #F4F6F8; --papier: #FFFFFF; --encre: #18233A; --doux: #4C5870; --trait: #D9DEE6;
+    --accent: #0E7C6B; --accent-pale: #DDF1EC; --signal: #A86A10; --signal-pale: #F8ECD6;
+    --titre: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+    --corps: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark;
+      --fond: #10161F; --papier: #18212D; --encre: #E8EDF4; --doux: #A3AEBF; --trait: #2C3747;
+      --accent: #4CC2AE; --accent-pale: #133A35; --signal: #E2A94E; --signal-pale: #3A2C12; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fond); color: var(--encre); font-family: var(--corps); font-size: 18px; line-height: 1.6;
+         padding-inline: 16px; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 860px; margin: 0 auto; padding-block: 0 56px; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  header { padding-block: 48px 30px; border-bottom: 3px solid var(--encre); display: grid; gap: 14px; }
+  .sur { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  h1 { font-family: var(--titre); font-weight: 800; font-size: clamp(36px, 7vw, 60px); line-height: 1.02; margin: 0; letter-spacing: -.02em; text-wrap: balance; }
+  .chapo { font-size: 21px; color: var(--doux); margin: 0; max-width: 60ch; }
+  nav.sommaire { display: flex; flex-wrap: wrap; gap: 8px; }
+  nav.sommaire a { text-decoration: none; font-size: 15px; font-weight: 600; background: var(--papier); border: 1px solid var(--trait); border-radius: 999px; padding: 6px 12px; color: var(--encre); }
+  nav.sommaire a:hover { border-color: var(--accent); }
+  h2 { font-family: var(--titre); font-weight: 600; font-size: 28px; margin: 0; text-wrap: balance; line-height: 1.15; }
+  p { margin: 0; max-width: 65ch; }
+  .fiche { padding-block: 34px; border-bottom: 1px solid var(--trait); display: grid; gap: 14px; scroll-margin-top: 16px; }
+  .num { font-family: var(--mono); font-size: 14px; color: var(--doux); }
+  .quand { color: var(--doux); }
+  .consigne { background: var(--papier); border: 1px solid var(--trait); border-left: 4px solid var(--accent); border-radius: 6px; padding: 14px 16px; display: grid; gap: 10px; }
+  .consigne .etiq { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  .consigne pre { margin: 0; white-space: pre-wrap; font-family: var(--mono); font-size: 15px; line-height: 1.55; color: var(--encre); }
+  .copier { justify-self: start; font: inherit; font-size: 15px; font-weight: 600; border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 4px; padding: 5px 14px; cursor: pointer; }
+  .copier:hover { background: var(--accent-pale); }
+  .astuces { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .piege { background: var(--signal-pale); border-radius: 6px; padding: 12px 16px; }
+  .piege b { color: var(--signal); }
+  .outils { padding-block: 34px; border-bottom: 1px solid var(--trait); display: grid; gap: 14px; }
+  .outils ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .offre { margin-top: 34px; background: var(--encre); color: var(--fond); border-radius: 10px; padding: 26px; display: grid; gap: 12px; }
+  .offre h2 { color: var(--fond); }
+  .offre p { color: var(--fond); opacity: .9; }
+  .formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .formats div { border: 1px solid rgba(255,255,255,.25); border-radius: 8px; padding: 12px 14px; display: grid; gap: 2px; }
+  .formats b { font-family: var(--titre); font-size: 26px; }
+  .contact { font-family: var(--titre); font-weight: 800; font-size: 26px; user-select: all; }
+  footer { margin-top: 28px; font-size: 15px; color: var(--doux); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="sur">Fiches gratuites pour petites entreprises, artisans, associations</p>
+    <h1>L'IA au quotidien, sans jargon</h1>
+    <p class="chapo">Six situations de tous les jours, et pour chacune une consigne à copier dans ChatGPT ou Le Chat de Mistral. Gratuit, en français, sans inscription.</p>
+    <nav class="sommaire" aria-label="Les fiches">
+      <a href="#courriel">Courriel délicat</a>
+      <a href="#relance">Relance de facture</a>
+      <a href="#resume">Résumer un document</a>
+      <a href="#reunion">Réunion</a>
+      <a href="#annonce">Annonce ou devis</a>
+      <a href="#prudence">Les règles</a>
+    </nav>
+  </header>
+
+  <section class="outils">
+    <h2>Avant de commencer : deux outils gratuits suffisent</h2>
+    <ul>
+      <li><b>ChatGPT</b> (chatgpt.com) : le plus connu. La version gratuite suffit pour tout ce qui suit.</li>
+      <li><b>Le Chat de Mistral</b> (chat.mistral.ai) : une entreprise française, une bonne alternative.</li>
+    </ul>
+    <p>Dans les consignes, remplacez ce qui est entre crochets [comme ceci] par votre propre situation. Plus vous donnez de détails, meilleure est la réponse.</p>
+  </section>
+
+  <section class="fiche" id="courriel">
+    <span class="num">Fiche 1</span>
+    <h2>Répondre à un courriel délicat</h2>
+    <p class="quand">Un client mécontent, une réclamation, un refus à formuler sans fâcher.</p>
+    <div class="consigne">
+      <span class="etiq">La consigne à copier</span>
+      <pre>Tu es mon assistant pour répondre aux clients de mon entreprise, [type d'entreprise].
+Voici le message que j'ai reçu :
+[collez le message, en retirant les noms et coordonnées]
+Je veux répondre poliment et fermement. Ce que je peux proposer : [votre proposition].
+Ce que je ne peux pas accepter : [votre limite].
+Écris une réponse courte, en vouvoyant, sans formule toute faite.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+    <ul class="astuces">
+      <li>Demandez « plus court » ou « plus chaleureux » si le ton ne vous va pas : l'IA reprend sa réponse.</li>
+      <li>Relisez toujours avant d'envoyer : c'est vous qui signez.</li>
+    </ul>
+  </section>
+
+  <section class="fiche" id="relance">
+    <span class="num">Fiche 2</span>
+    <h2>Relancer une facture impayée sans froisser</h2>
+    <p class="quand">Une facture en retard, un client que vous voulez garder.</p>
+    <div class="consigne">
+      <span class="etiq">La consigne à copier</span>
+      <pre>Écris trois messages de relance pour une facture impayée, du plus doux au plus ferme.
+Facture n° [numéro], montant [montant], échéance dépassée depuis [nombre] jours.
+Le client est [un bon client habituel / un nouveau client].
+Premier message : un simple rappel aimable. Deuxième : une demande de date de paiement.
+Troisième : un rappel ferme qui mentionne les pénalités de retard prévues dans mes conditions.
+Vouvoiement, phrases courtes.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+    <ul class="astuces">
+      <li>Gardez les trois messages : ils vous serviront pour toutes vos prochaines relances.</li>
+      <li>Les pénalités ne se mentionnent que si elles figurent bien sur vos factures ou vos conditions de vente.</li>
+    </ul>
+  </section>
+
+  <section class="fiche" id="resume">
+    <span class="num">Fiche 3</span>
+    <h2>Résumer un long document</h2>
+    <p class="quand">Un contrat, un règlement, un compte rendu de 20 pages que vous n'avez pas le temps de lire en entier.</p>
+    <div class="consigne">
+      <span class="etiq">La consigne à copier</span>
+      <pre>Voici un document : [collez le texte, ou joignez le fichier].
+Résume-le en 10 lignes maximum pour un dirigeant de petite entreprise.
+Puis liste à part : les dates à retenir, les montants, et ce que je dois faire.
+Si un point est ambigu, signale-le au lieu de deviner.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+    <div class="piege"><b>Attention :</b> un résumé ne remplace pas la lecture d'un contrat avant de le signer. Il vous dit où regarder.</div>
+  </section>
+
+  <section class="fiche" id="reunion">
+    <span class="num">Fiche 4</span>
+    <h2>Préparer une réunion, puis son compte rendu</h2>
+    <p class="quand">Un rendez-vous client, une réunion d'équipe, un point avec un fournisseur.</p>
+    <div class="consigne">
+      <span class="etiq">Avant : l'ordre du jour</span>
+      <pre>Je prépare une réunion de [durée] avec [qui]. Le but : [ce que vous voulez obtenir].
+Propose un ordre du jour en 4 points maximum, avec le temps pour chacun,
+et les trois questions que je ne dois pas oublier de poser.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+    <div class="consigne">
+      <span class="etiq">Après : le compte rendu</span>
+      <pre>Voici mes notes de réunion, en vrac : [vos notes].
+Fais-en un compte rendu clair : ce qui a été décidé, qui fait quoi, pour quand.
+Ne rajoute rien qui ne soit pas dans mes notes.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+  </section>
+
+  <section class="fiche" id="annonce">
+    <span class="num">Fiche 5</span>
+    <h2>Rédiger une annonce, une offre ou un devis clair</h2>
+    <p class="quand">Une annonce pour un local, un produit, une prestation ; le texte d'un devis.</p>
+    <div class="consigne">
+      <span class="etiq">La consigne à copier</span>
+      <pre>Rédige [une annonce / la description d'un devis] pour [ce que vous vendez].
+Les informations à inclure : [prix, dimensions, délais, ce qui est compris, ce qui ne l'est pas].
+Le public : [particuliers / entreprises / clients du quartier].
+Ton simple et précis, sans superlatifs. Pas plus de [nombre] lignes.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+    <ul class="astuces">
+      <li>Écrivez ce qui n'est pas compris dans le prix : c'est ce qui évite les malentendus plus tard.</li>
+      <li>Vérifiez chaque chiffre : l'IA peut en arrondir ou en inventer.</li>
+    </ul>
+  </section>
+
+  <section class="fiche" id="prudence">
+    <span class="num">Fiche 6</span>
+    <h2>Les règles à ne jamais oublier</h2>
+    <p class="quand">L'IA écrit bien, mais elle peut se tromper avec beaucoup d'assurance, et ce que vous lui donnez peut être conservé.</p>
+    <ul class="astuces">
+      <li><b>Ne collez jamais</b> de mots de passe, de numéros de carte, de données de santé, ni les noms et coordonnées de vos clients.</li>
+      <li><b>Relisez toujours</b> un chiffre, une date, un nom, une référence de loi avant de l'utiliser.</li>
+      <li><b>Demandez ses sources</b> quand elle affirme un fait, puis vérifiez-les vous-même.</li>
+      <li><b>Ne payez pas d'abonnement</b> avant d'avoir vraiment utilisé les versions gratuites.</li>
+    </ul>
+    <div class="consigne">
+      <span class="etiq">La consigne pour faire vérifier une réponse</span>
+      <pre>Relis ta réponse précédente. Signale chaque affirmation dont tu n'es pas sûr,
+chaque chiffre que tu as pu inventer, et ce que je dois vérifier moi-même.</pre>
+      <button class="copier" type="button">Copier la consigne</button>
+    </div>
+  </section>
+
+  <section class="offre" id="formation">
+    <h2>Aller plus loin, avec votre équipe</h2>
+    <p>Ces fiches donnent un avant-goût. En formation, chacun travaille sur ses propres documents et repart avec des consignes faites pour son métier.</p>
+    <div class="formats">
+      <div><b>290 €</b><span>Atelier découverte, 2 h, jusqu'à 8 personnes</span></div>
+      <div><b>490 €</b><span>Demi-journée pratique, 3 h 30, jusqu'à 8 personnes</span></div>
+      <div><b>120 €</b><span>Séance individuelle, 1 h 30</span></div>
+    </div>
+    <p>Prix finaux, dans vos locaux en Île-de-France ou en visio. TVA non applicable, article 293 B du CGI.</p>
+    <span class="contact">07 83 17 72 54</span>
+    <span class="contact" style="font-size:20px">edouard.parnel@gmail.com</span>
+    <p>Parnel Edouard, formateur au numérique depuis 2020, Bagneux (92).</p>
+  </section>
+
+  <footer>
+    Ces fiches sont libres d'utilisation. Les outils cités sont gratuits dans leur version de base au moment de l'écriture ; leurs conditions peuvent changer.
+  </footer>
+</div>
+<script>
+  document.querySelectorAll('.copier').forEach(b => b.addEventListener('click', async () => {
+    const texte = b.parentElement.querySelector('pre').innerText;
+    try { await navigator.clipboard.writeText(texte); b.textContent = 'Copiée'; }
+    catch (e) {
+      const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector('pre'));
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionnée : Ctrl + C';
+    }
+    setTimeout(() => { b.textContent = 'Copier la consigne'; }, 2500);
+  }));
+</script>
+</body>
+</html>
