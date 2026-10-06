@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L'IA au quotidien</title>
-<meta name="description" content="Six fiches gratuites pour utiliser l'IA dans une petite entreprise : courriels délicats, relances, résumés, réunions, annonces, et les règles de prudence. Consignes prêtes à copier.">
+<meta name="description" content="La méthode pour bien utiliser l'IA dans une petite entreprise : les cinq éléments d'une consigne efficace, les bonnes pratiques, et six situations de tous les jours. Gratuit, en français.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -57,6 +57,27 @@
   .formats div { border: 1px solid rgba(255,255,255,.25); border-radius: 8px; padding: 12px 14px; display: grid; gap: 2px; }
   .formats b { font-family: var(--titre); font-size: 26px; }
   .contact { font-family: var(--titre); font-weight: 800; font-size: 26px; user-select: all; }
+  .methode { padding-block: 34px; border-bottom: 1px solid var(--trait); display: grid; gap: 16px; scroll-margin-top: 16px; }
+  .elements { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .elements li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; background: var(--papier); border: 1px solid var(--trait); border-radius: 8px; padding: 12px 14px; }
+  .elements .n { font-family: var(--titre); font-weight: 800; font-size: 26px; line-height: 1; color: var(--accent); }
+  .elements b { display: block; font-size: 19px; }
+  .elements .q { display: block; color: var(--doux); font-size: 16px; }
+  .elements .ex { display: block; margin-top: 4px; font-family: var(--mono); font-size: 14px; color: var(--encre); }
+  .duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .duo > div { background: var(--papier); border: 1px solid var(--trait); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+  .duo .titre-duo { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .duo .mauvais .titre-duo { color: var(--signal); }
+  .duo .bon .titre-duo { color: var(--accent); }
+  .duo .bon { border: 2px solid var(--accent); }
+  .duo pre { margin: 0; white-space: pre-wrap; font-family: var(--mono); font-size: 14px; line-height: 1.55; }
+  .duo .pourquoi { color: var(--doux); font-size: 15px; }
+  .marque { font-weight: 600; color: var(--accent); }
+  .pratiques { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+  .pratiques li { background: var(--papier); border: 1px solid var(--trait); border-radius: 6px; padding: 12px 14px; }
+  .pratiques b { display: block; margin-bottom: 2px; }
+  .pratiques span { color: var(--doux); font-size: 16px; }
+  .intertitre { padding-block: 34px 0; display: grid; gap: 8px; }
   footer { margin-top: 28px; font-size: 15px; color: var(--doux); }
 </style>
 </head>
@@ -64,15 +85,14 @@
 <div class="page">
 
   <header>
-    <p class="sur">Fiches gratuites pour petites entreprises, artisans, associations</p>
+    <p class="sur">Méthode gratuite pour petites entreprises, artisans, associations</p>
     <h1>L'IA au quotidien, sans jargon</h1>
-    <p class="chapo">Six situations de tous les jours, et pour chacune une consigne à copier dans Le Chat de Mistral, l'IA française, ou dans ChatGPT. Gratuit, en français, sans inscription.</p>
-    <nav class="sommaire" aria-label="Les fiches">
-      <a href="#courriel">Courriel délicat</a>
-      <a href="#relance">Relance de facture</a>
-      <a href="#resume">Résumer un document</a>
-      <a href="#reunion">Réunion</a>
-      <a href="#annonce">Annonce ou devis</a>
+    <p class="chapo">Une IA répond aussi bien qu'on lui demande. Voici comment lui écrire pour obtenir du premier coup une réponse utile : la structure d'une bonne consigne, les bonnes pratiques, et six situations de tous les jours.</p>
+    <nav class="sommaire" aria-label="Sommaire">
+      <a href="#methode">Les 5 éléments</a>
+      <a href="#avant-apres">Avant, après</a>
+      <a href="#pratiques">Bonnes pratiques</a>
+      <a href="#situations">Six situations</a>
       <a href="#prudence">Les règles</a>
     </nav>
   </header>
@@ -84,7 +104,58 @@
       <li><b>ChatGPT</b> (chatgpt.com) : le plus connu, américain. Les mêmes consignes y fonctionnent.</li>
     </ul>
     <p>Choisir un outil français, c'est garder la main sur ses usages et ne pas dépendre d'un seul fournisseur étranger. Les consignes de ces fiches marchent avec l'un comme avec l'autre.</p>
-    <p>Dans les consignes, remplacez ce qui est entre crochets [comme ceci] par votre propre situation. Plus vous donnez de détails, meilleure est la réponse.</p>
+  </section>
+
+  <section class="methode" id="methode">
+    <h2>Les cinq éléments d'une bonne consigne</h2>
+    <p>Une IA ne connaît ni votre entreprise, ni votre client, ni ce que vous avez en tête. Tout ce que vous ne lui dites pas, elle le devine, et elle devine souvent à côté. Une consigne efficace contient ces cinq éléments, dans cet ordre.</p>
+    <ol class="elements">
+      <li><span class="n">1</span><div><b>Le rôle</b><span class="q">Qui doit-elle être pour vous aider ?</span><span class="ex">« Tu es l'assistant d'un artisan plombier. »</span></div></li>
+      <li><span class="n">2</span><div><b>Le contexte</b><span class="q">Votre situation, ce qui s'est passé, pour qui c'est. Ce qu'un nouveau collègue aurait besoin de savoir.</span><span class="ex">« Un client se plaint d'un retard de trois jours sur son chantier. Il est client depuis cinq ans. »</span></div></li>
+      <li><span class="n">3</span><div><b>La tâche</b><span class="q">Un verbe d'action, une seule chose à faire.</span><span class="ex">« Écris la réponse à son message. »</span></div></li>
+      <li><span class="n">4</span><div><b>Le format</b><span class="q">La forme et la longueur : un courriel, une liste, un tableau, dix lignes.</span><span class="ex">« Un courriel de 8 lignes au plus. »</span></div></li>
+      <li><span class="n">5</span><div><b>Les contraintes</b><span class="q">Le ton, ce qu'il faut dire, ce qu'il ne faut surtout pas dire.</span><span class="ex">« Vouvoiement, ton calme. Propose un geste : la main-d'œuvre du dernier jour offerte. Ne promets pas de date. »</span></div></li>
+    </ol>
+    <p>Pour aller plus loin : <span class="marque">montrez un exemple</span> de ce que vous attendez, par exemple un ancien courriel dont le ton vous plaît. L'IA s'en inspire.</p>
+  </section>
+
+  <section class="methode" id="avant-apres">
+    <h2>Avant, après : la même demande</h2>
+    <div class="duo">
+      <div class="mauvais">
+        <span class="titre-duo">Trop vague</span>
+        <pre>Écris un mail pour un client mécontent.</pre>
+        <span class="pourquoi">L'IA ne sait ni qui vous êtes, ni ce qui s'est passé, ni ce que vous proposez. Elle produit un texte passe-partout qu'il faudra entièrement réécrire.</span>
+      </div>
+      <div class="bon">
+        <span class="titre-duo">Efficace</span>
+        <pre>Tu es l'assistant d'un artisan plombier.
+Un client, fidèle depuis cinq ans, se plaint d'un retard de trois jours sur son chantier de salle de bains. Le retard vient d'une livraison de carrelage.
+Écris la réponse à son message.
+Un courriel de 8 lignes au plus.
+Vouvoiement, ton calme, sans se justifier longuement. Propose un geste : la main-d'œuvre du dernier jour offerte. Ne promets pas de date tant que le fournisseur n'a pas confirmé.</pre>
+        <span class="pourquoi">Rôle, contexte, tâche, format, contraintes : la réponse est utilisable presque telle quelle.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="methode" id="pratiques">
+    <h2>Les bonnes pratiques</h2>
+    <ul class="pratiques">
+      <li><b>Une tâche par consigne</b><span>Un gros travail se découpe en étapes : d'abord le plan, puis chaque partie.</span></li>
+      <li><b>Laissez-la poser ses questions</b><span>Terminez par « Avant de répondre, pose-moi les questions qui te manquent. »</span></li>
+      <li><b>Corrigez plutôt que recommencer</b><span>« Plus court », « moins formel », « garde le deuxième paragraphe » : elle reprend sa réponse.</span></li>
+      <li><b>Dites la longueur et la forme</b><span>Sans indication, l'IA écrit trop long. Un nombre de lignes, une liste, un tableau.</span></li>
+      <li><b>Une conversation par sujet</b><span>Pour un nouveau sujet, ouvrez une nouvelle conversation : l'ancienne brouille la réponse.</span></li>
+      <li><b>Remplacez les noms</b><span>« Client A », « Fournisseur B » : la réponse est aussi bonne, et rien de personnel ne sort.</span></li>
+      <li><b>Gardez vos meilleures consignes</b><span>Un simple document où vous les collez : vous les réutilisez en les adaptant.</span></li>
+      <li><b>Relisez avant d'utiliser</b><span>Un chiffre, une date, un nom, une loi : l'IA peut se tromper avec beaucoup d'assurance.</span></li>
+    </ul>
+  </section>
+
+  <section class="intertitre" id="situations">
+    <h2>Six situations : la méthode appliquée</h2>
+    <p>Chaque consigne suit les cinq éléments. Remplacez ce qui est entre crochets [comme ceci] par votre situation.</p>
   </section>
 
   <section class="fiche" id="courriel">
